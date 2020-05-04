@@ -21,85 +21,72 @@ html {
   min-height: 100vh;
   /* transform-origin: 50% 100%; */
 }
-.title {
-  text-align: center;
-  margin: auto;
-  /* display: flex; */
-}
-
 
 .title div{
-  /* font-family: 'Ubuntu', sans-serif; */
   font-family: 'Poller One', cursive;
-  /* font: 1.5rem 'LeagueMonoVariable', sans-serif; */
-  /* font-stretch: expanded; */
-  /* perspective: 400px; */
-  /* transform-origin: 50% 100%; */
-  /* transform: skew(15deg); */
+  font-size: 10vw;
+
+  /* forces all words to be on a newline */
+  word-spacing: 100vw; 
+  /* for isoceles trapezoid effect */
   transform: perspective(10px) rotateX(1deg);
-  /* transform: rotateX(1deg); */
-  /* transform: perspective(10px) rotateX(1deg); */
-  
-  /* display: flex; */
-  font-size: 15vw;
-  word-spacing: 100vw; /* forces all words to be on a newline */
 }
 
 #bestScore{
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Space Mono', monospace;
   color: white;
   font-size: 1.5rem;
-  padding: .5em 1em;
+  padding: .5rem 1rem;
 }
 
 #startBtn {
-  /* font: inherit; */
   font-family: 'Lato', sans-serif;
   font-size: 2rem;
-  /* create a small space when buttons wrap on 2 lines */
-  margin: 2px 0;
 
-  /* invisible border (will be colored on hover/focus) */
+  /* invisible border */
   border: solid 1px transparent;
   border-radius: 4px;
 
-  /* size comes from text & padding (no width/height) */
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2rem 0;
   padding: 0.5em 1em;
   width: 50%;
 
-  /* make sure colors have enough contrast! */
   color: #ffffff;
-  /* background-color: #9555af; */
   
+  /* background-color: #9555af; */
   background-color: #ABAEB0;
 }
-
+#startBtn:hover{
+  border: solid 1px white;
+}
 
 #gameArea {
   background-color: #565F63;
+  height: 100%;
   min-height: 100vh;
+  padding: 1rem 0;
 }
 #cardList{
   display: grid;
-  /* grid: auto-flow/ repeat(5, 80px); */
   grid-template-columns: repeat(5, 1fr);
+  /* grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr) ) ; */
+
   gap: 1rem;
-  
+  width: 100%;
+  justify-items: center;
+  grid-auto-rows: 10vw;
 }
 .card {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
+  width: 10vw;
+  height: 10vw;
 
-  width: 6rem;
-  height: 6rem;
-  /* padding: 2em 2em; */
-  margin: auto;
   border: solid 1px;
   border-radius: 4px;
+  
   text-align: center;
   transition: transform 0.8s;
-  /* transform: rotateY(180deg); */
 
   background-color: #634D50;
 }
@@ -112,15 +99,15 @@ html {
   /* transform: matrix(2.304, 1.020, 0.000, 2.098, 138.441, -46.000); */
 }
 
-
 .img{
   display: none;
   transform: rotateY(180deg);
   height: 100%;
+  border-radius: 4px;
 }
 
-.flipped .img, 
-.done .img{
+.done .img, 
+.flipped .img{
   display: block;
   margin: 0;
   padding: 0;
@@ -128,13 +115,12 @@ html {
 }
 
 #score {
-  background-color: inherit;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  /* symmetrical font */
+  font-family: 'Poppins', sans-serif;
+  font-size: 8vh;
   color: white;
-  font-size: 5rem;
+
+  display: flex;
+  align-items: center;
   /* border: 1px solid white; */
-  font-family: 'Ubuntu', sans-serif;
 }
