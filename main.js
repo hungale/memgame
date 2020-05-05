@@ -63,7 +63,6 @@ function startGame() {
 function createCard(indexInShuffledList) {
   let card = document.createElement('div');
   card.setAttribute('class', 'card');
-  // card.setAttribute('class', 'flipped');
   card.dataset['value'] = indexInShuffledList;
 
   let image = imageList[indexInShuffledList];
@@ -111,7 +110,7 @@ function flip(e) {
 function checkIfMatch() {
   let flippedCards = document.querySelectorAll('.flipped');
   flippedCards = [...flippedCards];
-  
+
   if (flippedCards[0].dataset['value'] === flippedCards[1].dataset['value']) {
     console.log('match found');
     numMatch++;
