@@ -98,14 +98,12 @@ html {
   transform: rotateY(180deg);
   /* transform: matrix(2.304, 1.020, 0.000, 2.098, 138.441, -46.000); */
 }
-
 .img{
   display: none;
   transform: rotateY(180deg);
   height: 100%;
   border-radius: 4px;
 }
-
 .done .img, 
 .flipped .img{
   display: block;
@@ -122,5 +120,4 @@ html {
 
   display: flex;
   align-items: center;
-  /* border: 1px solid white; */
 }

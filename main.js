@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log('page loaded');
 
   startBtn.addEventListener('click', (e) => {
-    // console.log('clicked', e.target);
     // reset for subsequent rounds
     cardList.innerHTML = "";
     numMatch = 0;
@@ -80,11 +79,12 @@ function createCard(indexInShuffledList) {
 
 function flip(e) {
   // console.log(e, e.target, this);
+
+  // validity checks
   if (numFlipped === 2) {
     console.log('already clicked 2 cards, wait for match');
     return;
   }
-  // console.log(e.target.parentNode, e.target.classList, e.target.classList.contains('done'), numFlipped);
   // check if parent (card) is already done
   if (e.target.parentNode.classList.contains('done')) {
     console.log('clicked an already matched card, input ignored');
@@ -111,13 +111,12 @@ function flip(e) {
 function checkIfMatch() {
   let flippedCards = document.querySelectorAll('.flipped');
   flippedCards = [...flippedCards];
-  // flippedCards.forEach((el) => console.log(el.dataset));
-
+  
   if (flippedCards[0].dataset['value'] === flippedCards[1].dataset['value']) {
     console.log('match found');
     numMatch++;
 
-    console.log("numMatch:", numMatch);
+    console.log("cards matched:", numMatch);
     if (numMatch === imageList.length) {
       console.log('all matches found, game complete');
 
